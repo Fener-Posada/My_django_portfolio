@@ -32,8 +32,7 @@
             <div class="col-lg-8 pt-4 pt-lg-0 content">
                <!--<h3>Data Analyst &amp; Data Science.</h3>-->           
                <p > Hi! My name is Fener Posada and I am a data analyst. I like to identify needs, prepare, automate and optimize reports that have a positive impact on business management, using BI tools such as Power Bi, Tableau, Python, SQL, Excel and Visual Basic. I like getting valuable insights from data and visualize it in a simple way.    </p>
-               <p > In my free time I like programming or be freelance. I believe in never stopping learning, which is why I am always looking for new skills to learn and challenges to overcome.
-                
+               <p > In my free time, I like programming or working as a freelance. I believe in never stopping learning, which is why I am always looking for new skills to learn and challenges to overcome. 
               </p>
               <div class="row">
                 <div class="col-lg-6">
@@ -81,7 +80,7 @@
                   <i class="bx bx-pie-chart"></i>
                 </div>
                 <h4><a href="">Data analysis</a></h4>
-                <p>If you need to analyze data and know trends, indicators, recommendations in a clear way through reports or customized tools.</p>
+                <p>If you need to analyze data and know trends, indicators, and recommendations in a clear way through reports or customized tools.</p>
               </div>
             </div>
   
@@ -94,7 +93,7 @@
                   <i class="bx bx-line-chart"></i>
                 </div>
                 <h4><a href="">Data analytics</a></h4>
-                <p>Get more value from your data with prediction models and machine learning techniques. I can show where you are, where you have been and also where you are going.</p>
+                <p>Get more value from your data with prediction models and machine learning techniques. I can show you where you are, where you have been, and also where you are going.</p>
               </div>
             </div>
   
@@ -107,7 +106,7 @@
                   <i class="bx bxs-bar-chart-square"></i>
                 </div>
                 <h4><a href="">Data visualization</a></h4>
-                <p>Dashboards show the most recent results in an interactive way. By clicking and drilling, you will examine trends and patterns yourself.</p>
+                <p>Dashboards show the most recent results interactively. By clicking and drilling, you will examine trends and patterns yourself.</p>
               </div>
             </div>
   
@@ -120,7 +119,7 @@
                   <i class="bx bxs-data"></i>
                 </div>
                 <h4><a href="">Data Management</a></h4>
-                <p>Data harvesting, cleaning and reshaping. Development of automated workflows.</p>
+                <p>Data harvesting, cleaning, and reshaping. Development of automated workflows.</p>
               </div>
             </div>
   
@@ -133,7 +132,7 @@
                   <i class="bx bxs-info-circle"></i>
                 </div>
                 <h4><a href="">Advice and coaching projects</a></h4>
-                <p>Before and during data related projects, I give advice on the progress of the project and I coach data analysts.</p>
+                <p>Before and during data-related projects, I advise on the progress of the project and I coach data analysts.</p>
               </div>
             </div>
           </div>
@@ -194,67 +193,75 @@
                 <video  autoplay ="autoplay"  controls="controls" >  <source src="{% static 'video.mp4' %} " type="video/mp4"></video>           
           -->
         {% if my_projects is not null %}
-          {% for project in my_projects %}
-          
+          {% for project in my_projects %}  
             {% if project.Categoria == "Development" %}
-            <div class="col-lg-4 col-md-6 portfolio-item filter-development">
-              <div class="portfolio-wrap">
-                <img src="{{project.Image.url}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>{{project.Title}}</h4>
-                  <p>{{project.Description}}</p>
-                  <div class="portfolio-links">
-                    <a href="{{project.Image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
-                    <a href="{% url 'my_portfolio:detail_project' project.id %}"  class="portfolio-details-lightbox"  data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% else %}
-              {% if project.Categoria == "Data visualization"  %}
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Data-visualization">
-                  <div class="portfolio-wrap">
-                    <img src="{{project.Image.url}}" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>{{project.Title}}</h4>
-                      <p>{{project.Description}}</p>
-                      <div class="portfolio-links">
-                        <a href="{{project.Image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
-                        <a href="{% url 'my_portfolio:detail_project' project.id %}" target="_blank"  data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                      </div>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-development">
+                <div class="portfolio-wrap">
+                  <img src="{{project.Image_1.url}}" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>{{project.Title}}</h4>
+                    <p>{{project.Short_Description}}</p>
+                    <div class="portfolio-links">
+                      <a href="{{project.Image_1.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
+                      <a href="{% url 'my_portfolio:detail_project' project.id %}" target="_blank"   data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                     </div>
                   </div>
                 </div>
+              </div>
+            {% else %}
+              {% if project.Categoria == "Data visualization"  %}
+              <div class="col-lg-4 col-md-6 portfolio-item filter-Data-visualization">
+                <div class="portfolio-wrap">
+                  <img src="{{project.Image_1.url}}" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>{{project.Title}}</h4>
+                    <p>{{project.Short_Description}}</p>
+                    <div class="portfolio-links">
+                      <a href="{{project.Image_1.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
+                      <a href="{% url 'my_portfolio:detail_project' project.id %}" target="_blank"  data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {% else %}
                 {% if project.Categoria == "Data analysis"  %}
                   <div class="col-lg-4 col-md-6 portfolio-item filter-Data-analysis">
                     <div class="portfolio-wrap">
-                      <img src="{{project.Image.url}}" class="img-fluid" alt="">
+                      <img src="{{project.Image_1.url}}" class="img-fluid" alt="">
                       <div class="portfolio-info">
                         <h4>{{project.Title}}</h4>
-                        <p>{{project.Description}}</p>
+                        <p>{{project.Short_Description}}</p>
                         <div class="portfolio-links">
-                          <a href="{{project.Image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
+                          <a href="{{project.Image_1.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
                           <a href="{% url 'my_portfolio:detail_project' project.id %}" target="_blank"  data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                {% endif %}
-              {% endif %}              
+                  {% else %}
+                    {% if project.Categoria == "Data analysis"  %}
+                      <div class="col-lg-4 col-md-6 portfolio-item filter-Data-analysis">
+                        <div class="portfolio-wrap">
+                          <img src="{{project.Image_1.url}}" class="img-fluid" alt="">
+                          <div class="portfolio-info">
+                            <h4>{{project.Title}}</h4>
+                            <p>{{project.Short_Description}}</p>
+                            <div class="portfolio-links">
+                              <a href="{{project.Image_1.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.Title}}"><i class="bx bx-plus"></i></a>
+                              <a href="{% url 'my_portfolio:detail_project' project.id %}" target="_blank"  data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                {% endif %}  
+              {% endif %}  
             {% endif %}
-         {% endfor %}
-         {% else %}
-          <h1>null</h1>     
-        {% endif %}
-
-
-        </div>
-        
-        
-
-        
+            
+          {% endfor %}
+        {% else %}
+          <h1>No projects</h1>     
+        {% endif %}               
       </div>
     </section><!-- End Portfolio Section -->
  
