@@ -48,19 +48,28 @@
 
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
+                <h1> </h1>
+
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="{{my_project.Image_1.url}}" alt="">
-                </div>
+                {% if my_project.Image_1 %}
+                  <div class="swiper-slide">
+                    <img src="{{my_project.Image_1.url}}" alt="">
+                  </div>
 
-                <div class="swiper-slide">
-                  <img src="{{my_project.Image_2.url}}" alt="">
-                </div>
+                  {% if my_project.Image_2 %}
+                    <div class="swiper-slide">
+                      <img src="{{my_project.Image_2.url}}" alt="">
+                    </div>
+                    {% if my_project.Image_3 is not null %}
+                    <div class="swiper-slide">
+                      <img src="{{my_project.Image_3.url}}" alt="">
+                    </div>                    
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
 
-                <div class="swiper-slide">
-                  <img src="{{my_project.Image.url}}" alt="">
-                </div>
+
 
               </div>
               <div class="swiper-pagination"></div>
@@ -72,14 +81,14 @@
               <h3>{{my_project.Title}}</h3>
               <ul>
                 <li><strong>Category</strong>: {{my_project.Categoria}}</li>
-                <li><strong>Description</strong>: {{my_project.Description}}</li>
+                <li><strong>Description</strong>: {{my_project.Short_Description}}</li>
                 <li><strong>Project URL</strong>: <a href={{my_project.Url}}>{{my_project.Url|truncatechars:40}}</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Details</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {{my_project.Description}}.
               </p>
             </div>
           </div>
